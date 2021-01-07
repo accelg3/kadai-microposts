@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         get :followings
         get :followers
       
-        get 'likes', to: 'users#favoritings'
+        get :likes
       end
       
       
