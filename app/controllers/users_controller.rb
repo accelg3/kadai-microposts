@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   def followings
     @user=User.find(params[:id])
     @followings=@user.followings.page(params[:page])
+    counts(@user)
   end
   
   def followers
@@ -41,7 +42,7 @@ class UsersController < ApplicationController
     @user=User.find(params[:id])
     
     @favoritings=@user.favoritings.order(id: :desc).page(params[:page])
-  
+    counts(@user)
   end
   
   

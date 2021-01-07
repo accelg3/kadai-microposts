@@ -7,7 +7,7 @@ class User < ApplicationRecord
     has_secure_password
     has_many :favorites
     has_many :microposts
-    has_many :reverses_of_favorite, class_name: 'Favorite', foreign_key: 'micropost_id'
+   
     has_many :favoritings, through: :favorites, source: :micropost
     
     has_many :relationships
